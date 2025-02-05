@@ -73,6 +73,11 @@ public class Product {
             // Пока просто оставим как есть (не меняем).
         }
     }
+    public void applyDiscount(double percent) {
+        if (percent > 0 && percent < 100) {
+            price = price - (price * percent / 100);
+        }
+    }
 
     public String getCategory() {
         return category;
