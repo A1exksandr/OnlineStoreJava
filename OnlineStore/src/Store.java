@@ -6,10 +6,11 @@ public class Store {
         Product p1 = new Product("MacBook M3", 3000.00);
         Product p2 = new Product("AirPods", 20.00);
         Product p3 = new Product("AirPods Pro", 25.00);
+        Product p4 = new Product("JBL Charge 5", 50.0);
 
         // Используем сеттеры, чтобы добавить данные о категории и id
         p1.setId("NBK-001");
-        p1.setCategory("Лaptops");
+        p1.setCategory("Laptops");
 
         p2.setId("HPH-001");
         p2.setCategory("Headphones");
@@ -17,11 +18,21 @@ public class Store {
         p3.setId("HPH-002");
         p3.setCategory("Headphones");
 
+        p4.setId("SPK-001");
+        p4.setCategory("Speaker");
+
         // Пример вывода информации
         System.out.println("Информация о товарах:");
         System.out.println(p1);
         System.out.println(p2);
         System.out.println(p3);
+        System.out.println(p4);
+
+        System.out.println("Скидка в 10% на ноутбук и колонку");
+        p1.applyDiscount(10);
+        p4.applyDiscount(10);
+        System.out.println(p1);
+        System.out.println(p4);
 
         // Пример изменения цены
         p2.setPrice(-10.0);
