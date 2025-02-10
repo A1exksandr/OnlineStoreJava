@@ -1,6 +1,8 @@
 public class Store {
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
+
+        Cart cart = new Cart();
 
         // Пример создания продуктов с использованием разных конструкторов
         Product p1 = new Product("MacBook M3", 3000.00);
@@ -42,6 +44,18 @@ public class Store {
         // Продемонстрируем работу со статическим счётчиком
         System.out.println("Всего продуктов создано: " + Product.getTotalProducts());
 
+        cart.addProduct(p1);
+        cart.addProduct(p2);
+        cart.addProduct(p3);
+
+        cart.printCartDetails();
+        System.out.println("Итоговая стоимость: " + cart.getTotalCost());
+
+        System.out.println("Наушники идут в подарок.");
+
+        cart.removeProduct(p2);
+        System.out.println("Итоговая стоимость: " + cart.getTotalCost());
+
         /*
          * Типичные ошибки:
          * - Забывать вызвать конструктор или не понимать, что без конструктора нельзя создать объект.
@@ -77,5 +91,8 @@ public class Store {
          *    - Реализуй проверку наличия товара перед удалением (чтобы не было ошибок).
          *    - Продумай, что будет, если корзина пустая (возвращать 0 при getTotalCost() или выводить сообщение).
          */
+    }
+    private static Cart getCart(Cart cart) {
+        return cart;
     }
 }
