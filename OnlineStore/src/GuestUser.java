@@ -1,5 +1,6 @@
-public class GuestUser extends User{
+public class GuestUser extends User {
     private String role;
+
     public GuestUser(String username, String password, String email) {
         super(username, "0", email);
         this.role = "Guest";
